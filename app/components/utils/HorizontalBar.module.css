@@ -1,0 +1,28 @@
+.bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0c4a5b, #27dddf, #a427df);
+}
+
+.light {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  filter: blur(4px);
+  animation: moveLight 2.5s linear infinite;
+}
+
+@keyframes moveLight {
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}

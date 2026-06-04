@@ -1,0 +1,28 @@
+/* .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  color: #27dddf;
+  font-size: 2em;
+}
+
+.links {
+  display: flex;
+}
+
+.a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.a:hover {
+  color: #27dddf;
+} */
