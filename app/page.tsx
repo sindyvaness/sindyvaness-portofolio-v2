@@ -1,7 +1,8 @@
 import ExternalLinks from "./components/ExternalLinks";
+import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import MainSkills from "./components/MainSkills";
-import ProjectsPage from "./components/projects/page";
+import Work from "./components/Work";
 import Footer from "./components/shared/Footer";
 import NavBar from "./components/shared/NavBar/NavBar";
 import GradienteBG from "./components/utils/GradienteBG";
@@ -17,11 +18,8 @@ export default function Home() {
           <HorizontalBar />
           <Hero />
           <MainSkills />
-          <MainSkills />
-          <MainSkills />
-          <MainSkills />
-          <MainSkills />
-          <MainSkills />
+          <Work />
+          <Experience />
           <Footer />
         </div>
         

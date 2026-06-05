@@ -1,0 +1,132 @@
+.experience {
+  width: min(1100px, calc(100% - 32px));
+  margin: 24px auto 56px;
+  padding: 28px 20px;
+  border: 1px solid rgba(39, 221, 223, 0.2);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.title {
+  margin-bottom: 22px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+.timelineScroller {
+  overflow-x: auto;
+  padding: 6px 6px 14px;
+}
+
+.timeline {
+  position: relative;
+  min-width: 820px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 54px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  opacity: 0.7;
+}
+
+.point {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 0 10px 12px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  margin: 8px auto 0;
+  border-radius: 999px;
+  border: 2px solid var(--secondary-color);
+  background: #000;
+  box-shadow: 0 0 0 rgba(39, 221, 223, 0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.point:hover .dot,
+.point:focus-visible .dot,
+.pointActive .dot {
+  transform: scale(1.2);
+  background: var(--secondary-color);
+  box-shadow:
+    0 0 10px rgba(39, 221, 223, 0.65),
+    0 0 18px rgba(164, 39, 223, 0.35);
+}
+
+.years {
+  color: #d8e7ea;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.role {
+  color: #f4f7f9;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.company {
+  color: var(--default-text-color);
+  font-size: 0.85rem;
+}
+
+.detailCard {
+  margin-top: 10px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(164, 39, 223, 0.25);
+  background: linear-gradient(180deg, rgba(12, 74, 91, 0.2), rgba(12, 12, 12, 0.35));
+}
+
+.detailIntro {
+  margin-bottom: 12px;
+  color: #d6e4e8;
+}
+
+.detailTitle {
+  margin: 10px 0 8px;
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
+
+.detailList {
+  margin: 0;
+  padding-left: 18px;
+  color: #c8d2d5;
+}
+
+.detailList li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 20px 14px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .timeline {
+    min-width: 760px;
+  }
+}

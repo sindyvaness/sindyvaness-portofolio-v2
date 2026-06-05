@@ -1,0 +1,175 @@
+.educationPage {
+  width: min(1150px, calc(100% - 32px));
+  margin: 22px auto 48px;
+  color: #eef6f8;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(39, 221, 223, 0.35);
+  padding: 34px 28px;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(164, 39, 223, 0.25), transparent 38%),
+    radial-gradient(circle at 12% 78%, rgba(39, 221, 223, 0.2), transparent 36%),
+    linear-gradient(140deg, rgba(12, 74, 91, 0.5), rgba(10, 10, 10, 0.86));
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--secondary-color);
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 3.3rem);
+  line-height: 1.05;
+  max-width: 18ch;
+}
+
+.description {
+  margin-top: 14px;
+  max-width: 64ch;
+  color: #c9d7db;
+}
+
+.quickFacts {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.quickFacts article {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.quickFacts h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+}
+
+.quickFacts p {
+  margin-top: 6px;
+  color: #c4ced3;
+}
+
+.contentGrid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.timelinePanel,
+.certCard,
+.focusCard {
+  border: 1px solid rgba(164, 39, 223, 0.25);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.timelinePanel {
+  padding: 20px;
+}
+
+.timelinePanel > h2,
+.certCard > h2,
+.focusCard > h2 {
+  margin: 0 0 14px;
+  color: #e6f5f9;
+  font-size: 1.25rem;
+}
+
+.timelineList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.timelineItem {
+  position: relative;
+  border: 1px solid rgba(39, 221, 223, 0.15);
+  border-radius: 12px;
+  padding: 14px 14px 14px 34px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.dot {
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--secondary-color);
+  box-shadow: 0 0 0 4px rgba(39, 221, 223, 0.18);
+}
+
+.period {
+  margin: 0;
+  color: #9eb5bf;
+  font-size: 0.82rem;
+}
+
+.timelineItem h3 {
+  margin: 5px 0;
+  color: #eef4f7;
+  font-size: 1.02rem;
+}
+
+.institution {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.summary {
+  margin-top: 8px;
+  color: #c6d2d8;
+}
+
+.sidePanel {
+  display: grid;
+  gap: 18px;
+}
+
+.certCard,
+.focusCard {
+  padding: 18px;
+}
+
+.certCard ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #ccd8de;
+}
+
+.certCard li {
+  margin-bottom: 8px;
+}
+
+.focusCard p {
+  margin: 0;
+  color: #c6d4d9;
+}
+
+@media (max-width: 960px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .quickFacts {
+    grid-template-columns: 1fr;
+  }
+}
