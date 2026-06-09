@@ -1,0 +1,100 @@
+:global(:root) {
+  --education-hero-text-color: #fff;
+  --education-hero-description-color: #c9d7db;
+  --education-hero-fact-text-color: #c4ced3;
+  --education-hero-border-color: rgba(39, 221, 223, 0.35);
+  --education-hero-card-border-color: rgba(255, 255, 255, 0.12);
+  --education-hero-card-bg: rgba(0, 0, 0, 0.3);
+  --education-hero-gradient-a: rgba(164, 39, 223, 0.25);
+  --education-hero-gradient-b: rgba(39, 221, 223, 0.2);
+  --education-hero-gradient-c: rgba(12, 74, 91, 0.5);
+  --education-hero-gradient-d: rgba(10, 10, 10, 0.86);
+}
+
+.educationHero {
+    width: 100%;
+    color: var(--education-hero-text-color);
+    border: 1px solid var(--education-hero-border-color);
+    padding: 25px 20px;
+    background:
+    radial-gradient(circle at 88% 20%, var(--education-hero-gradient-a), transparent 38%),
+    radial-gradient(circle at 12% 78%, var(--education-hero-gradient-b), transparent 36%),
+    linear-gradient(140deg, var(--education-hero-gradient-c), var(--education-hero-gradient-d));
+}
+
+.educationHero .content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.description {
+  margin-top: 14px;
+  color: var(--education-hero-description-color);
+}
+
+.quickFacts {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.quickFacts article {
+  border: 1px solid var(--education-hero-card-border-color);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--education-hero-card-bg);
+}
+
+.quickFacts h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.quickFacts p {
+  margin-top: 6px;
+  font-size: 1.3rem;
+  color: var(--education-hero-fact-text-color);
+}
+
+/* =========================
+   2. Small tablets / large phones
+   481px – 768px
+   ========================= */
+
+@media (min-width: 481px) {
+    .quickFacts {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .quickFacts article {
+        flex: 1;
+    }
+}
+
+@media (min-width: 769px) {
+  .content {
+    width: 80%;
+  }
+
+  .quickFacts article {
+        max-width: 320px;
+    }
+
+}
+
+@media (min-width: 1025px) {
+  
+}

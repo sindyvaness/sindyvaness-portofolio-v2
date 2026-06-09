@@ -1,4 +1,5 @@
 import Experience from "../components/Experience";
+import EducationHero from "./components/EducationHero";
 import NavBar from "../components/shared/NavBar/NavBar";
 import styles from "./EducationPage.module.css";
 
@@ -44,28 +45,7 @@ const Education = () => {
     return (
         <section className={styles.educationPage}>
             <NavBar />
-            <header className={styles.hero}>
-                <p className={styles.kicker}>Education</p>
-                <h1 className={styles.title}>A learning path built for enterprise impact.</h1>
-                <p className={styles.description}>
-                    Continuous technical growth across cloud, architecture, and delivery practices to ship reliable products.
-                </p>
-
-                <div className={styles.quickFacts}>
-                    <article>
-                        <h2>8+</h2>
-                        <p>Years building software solutions</p>
-                    </article>
-                    <article>
-                        <h2>4</h2>
-                        <p>Active certifications and learning tracks</p>
-                    </article>
-                    <article>
-                        <h2>3</h2>
-                        <p>Major education milestones represented</p>
-                    </article>
-                </div>
-            </header>
+            <EducationHero />
 
             <Experience></Experience>
 
