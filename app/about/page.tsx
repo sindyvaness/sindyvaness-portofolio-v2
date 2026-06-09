@@ -4,7 +4,7 @@ import Footer from "../components/shared/Footer";
 import NavBar from "../components/shared/NavBar/NavBar";
 import GradienteBG from "../components/utils/GradienteBG";
 import HorizontalBar from "../components/utils/HorizontalBar";
-import EducationHero from "../education/components/EducationHero";
+import EducationHero from "./components/EducationHero";
 
 const About = () => {
     return (

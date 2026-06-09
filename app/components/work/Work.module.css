@@ -1,0 +1,218 @@
+:global(:root) {
+  --work-surface-border: rgba(39, 221, 223, 0.18);
+  --work-card-border: rgba(255, 255, 255, 0.12);
+  --work-card-surface: rgba(255, 255, 255, 0.04);
+  --work-card-surface-strong: rgba(0, 0, 0, 0.42);
+  --work-text-muted: #bfd0d5;
+  --work-text-soft: #91a7b1;
+}
+
+.workSection {
+  width: min(1150px, calc(100% - 32px));
+  margin: 56px auto;
+  color: #eef6f8;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--secondary-color);
+  font-size: 0.78rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 0.96;
+  font-weight: 600;
+}
+
+.intro {
+  color: var(--work-text-muted);
+  font-size: 1rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.projectCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--work-card-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    var(--work-card-surface);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.imageShell {
+  position: relative;
+  min-height: 240px;
+  border-bottom: 1px solid var(--work-surface-border);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.5)),
+    radial-gradient(circle at 80% 20%, rgba(164, 39, 223, 0.28), transparent 30%),
+    radial-gradient(circle at 18% 82%, rgba(39, 221, 223, 0.22), transparent 28%);
+}
+
+.cardMeta {
+  position: absolute;
+  inset: 16px 16px auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardIndex,
+.badge {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 16, 20, 0.52);
+  backdrop-filter: blur(12px);
+  color: #f4fcff;
+}
+
+.cardIndex {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: var(--secondary-color);
+  font-size: 0.78rem;
+}
+
+.cardBody {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+}
+
+.projectTitle {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+.projectDescription {
+  margin: 0;
+  color: var(--work-text-muted);
+  max-width: 48ch;
+}
+
+.projectTech {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.featuredCard .imageShell {
+  min-height: 320px;
+}
+
+.featuredCard .projectImage {
+  min-height: 320px;
+}
+
+.standardCard {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    var(--work-card-surface-strong);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.toggleButton {
+  border: 1px solid rgba(39, 221, 223, 0.4);
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: transparent;
+  color: #eef6f8;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px);
+  background: rgba(39, 221, 223, 0.08);
+  border-color: rgba(39, 221, 223, 0.68);
+}
+
+@media (min-width: 769px) {
+  .projectsGrid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .projectCard {
+    grid-column: span 6;
+  }
+
+  .featuredCard:first-child {
+    grid-column: span 8;
+    grid-row: span 2;
+  }
+
+  .featuredCard:nth-child(2) {
+    grid-column: span 4;
+  }
+
+  .featuredCard:nth-child(3) {
+    grid-column: span 4;
+  }
+
+  .standardCard {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sectionHeader {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    align-items: end;
+    column-gap: 28px;
+  }
+
+  
+
+  .intro {
+    justify-self: end;
+  }
+
+  .featuredCard:first-child .cardBody {
+    grid-template-columns: minmax(0, 1.1fr) minmax(200px, 0.9fr);
+    align-items: end;
+  }
+}

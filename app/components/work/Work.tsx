@@ -67,42 +67,56 @@ const Work = () => {
 	const visibleProjects = showAll ? orderedProjects : orderedProjects.slice(0, DEFAULT_VISIBLE);
 
 	return (
-		<section className={styles.work} id="projects">
-			<div className={styles.header}>
-				<h2>Highlighted Work</h2>
-				<p>Los tres proyectos mas destacados se muestran primero.</p>
+		<section id="projects" className={styles.workSection} aria-labelledby="projects-heading">
+			<div className={styles.sectionHeader}>
+				<h2 id="projects-heading" className={styles.heading}>
+					Systems built for scale, risk, and real operational use.
+				</h2>
+
+				<p className={styles.intro}>
+					A focused set of enterprise deliveries across banking, insurance, CRM, analytics, and systems
+					integration.
+				</p>
+				<p className={styles.kicker}>Selected Projects</p>
 			</div>
 
-			<div className={styles.rows}>
-				{visibleProjects.map((project) => (
-					<article key={project.title} className={styles.projectRow}>
-						<div className={styles.media}>
+			<div className={styles.projectsGrid}>
+				{visibleProjects.map((project, index) => (
+					<article
+						key={project.title}
+						className={`${styles.projectCard} ${project.featured ? styles.featuredCard : styles.standardCard}`}
+					>
+						<div className={styles.imageShell}>
 							<Image
 								src={project.image}
 								alt={project.title}
-								width={1200}
-								height={760}
-								className={styles.image}
+								width={960}
+								height={720}
+								className={styles.projectImage}
 							/>
+							<div className={styles.imageOverlay} />
+							<div className={styles.cardMeta}>
+								<span className={styles.cardIndex}>{String(index + 1).padStart(2, "0")}</span>
+								{project.featured ? <span className={styles.badge}>Featured</span> : null}
+							</div>
 						</div>
 
-						<div className={styles.contentCard}>
-							{project.featured && <span className={styles.badge}>Featured</span>}
-							<h3>{project.title}</h3>
-							<p>{project.description}</p>
-							<small>{project.tech}</small>
+						<div className={styles.cardBody}>
+							<h3 className={styles.projectTitle}>{project.title}</h3>
+							<p className={styles.projectDescription}>{project.description}</p>
+							<p className={styles.projectTech}>{project.tech}</p>
 						</div>
 					</article>
 				))}
 			</div>
 
-			{orderedProjects.length > DEFAULT_VISIBLE && (
+			{orderedProjects.length > DEFAULT_VISIBLE ? (
 				<div className={styles.actions}>
-					<button type="button" onClick={() => setShowAll((prev) => !prev)} className={styles.toggleButton}>
-						{showAll ? "Ver menos" : "Ver mas"}
+					<button type="button" className={styles.toggleButton} onClick={() => setShowAll((current) => !current)}>
+						{showAll ? "Show fewer projects" : "Show all projects"}
 					</button>
 				</div>
-			)}
+			) : null}
 		</section>
 	);
 };
