@@ -2,6 +2,7 @@ import ExternalLinks from "./components/ExternalLinks";
 import Hero from "./components/Hero";
 import MainSkills from "./components/MainSkills";
 import Work from "./components/work/Work";
+import ContactForm from "./components/shared/ContactForm";
 import Footer from "./components/shared/Footer";
 import NavBar from "./components/shared/NavBar/NavBar";
 import GradienteBG from "./components/utils/GradienteBG";
@@ -20,6 +21,7 @@ export default function Home() {
             <MainSkills />
           </div>
           <Work />
+          <ContactForm />
           <Footer />
         </div>
         
