@@ -77,7 +77,19 @@ const Work = () => {
 					A focused set of enterprise deliveries across banking, insurance, CRM, analytics, and systems
 					integration.
 				</p>
+			</div>
+
+			<div className={styles.sectionMeta}>
 				<p className={styles.kicker}>Selected Projects</p>
+				{orderedProjects.length > DEFAULT_VISIBLE ? (
+					<button
+						type="button"
+						className={styles.toggleButton}
+						onClick={() => setShowAll((current) => !current)}
+					>
+						{showAll ? "Show fewer projects" : "Show all projects"}
+					</button>
+				) : null}
 			</div>
 
 			<div className={styles.projectsGrid}>
@@ -110,13 +122,6 @@ const Work = () => {
 				))}
 			</div>
 
-			{orderedProjects.length > DEFAULT_VISIBLE ? (
-				<div className={styles.actions}>
-					<button type="button" className={styles.toggleButton} onClick={() => setShowAll((current) => !current)}>
-						{showAll ? "Show fewer projects" : "Show all projects"}
-					</button>
-				</div>
-			) : null}
 		</section>
 	);
 };

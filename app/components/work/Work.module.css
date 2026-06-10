@@ -8,7 +8,7 @@
 }
 
 .workSection {
-  width: min(1150px, calc(100% - 32px));
+  width: min(1150px, calc(100% - 50px));
   margin: 56px auto;
   color: #eef6f8;
 }
@@ -17,7 +17,23 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
+}
+
+.sectionMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 10;
+  padding: 10px 12px;
+  border-bottom: 3px solid rgba(39, 221, 223, 0.2);
+  border-radius: 14px;
+  background: rgba(6, 10, 12, 0.144);
+  backdrop-filter: blur(8px);
+  margin-bottom: 20px;
 }
 
 .kicker {
@@ -49,11 +65,13 @@
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid var(--work-card-border);
+  /* border: 1px solid var(--work-card-border); */
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
     var(--work-card-surface);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  border-bottom: 5px solid rgba(39, 221, 223, 0.2);
+  border-left: 5px solid rgba(39, 221, 223, 0.2);
 }
 
 .imageShell {
@@ -149,19 +167,14 @@
     var(--work-card-surface-strong);
 }
 
-.actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-}
-
 .toggleButton {
   border: 1px solid rgba(39, 221, 223, 0.4);
   border-radius: 999px;
-  padding: 12px 18px;
-  background: transparent;
+  padding: 8px 14px;
+  background: rgba(6, 10, 12, 0.575);
   color: #eef6f8;
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 

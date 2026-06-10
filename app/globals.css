@@ -48,15 +48,17 @@ main {
 .main-container {
   display: block;
   width: 100%;
+  padding-top: var(--header-height);
 }
 
 /* INIT: HEADER */
+
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 20;
   min-height: var(--header-height);
@@ -65,6 +67,7 @@ header {
   width: 100%;
   height: auto;
   padding: 0 20px;
+
 }
 
 header h1 {
@@ -81,9 +84,10 @@ nav {
 }
 
 .mobileNav {
-  position: absolute;
+  position: fixed;
   top: var(--header-height);
   right: 0;
+  z-index: 30;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -94,6 +98,7 @@ nav {
   background: rgba(0, 0, 0, 0.699);
   color: #ccc;
   text-align: right;
+
 }
 
 .mobileNav a {
@@ -112,6 +117,8 @@ nav {
 }
 
 /* END: HEADER */
+
+
 
 /* HERO SECTION */
 .hero {
@@ -176,20 +183,13 @@ nav {
 }
 
 .main-skills .skill-item {
-  background: rgba(255,255,255,0.03);
   padding: 20px;
   border-radius: 10px;
-  width: 200px;
+  /* width: 200px; */
   border: 1px solid var(--primary-color);
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 0 0 rgba(39, 221, 223, 0);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-
-.main-skills .skill-item:hover {
-  transform: scale(1.06);
   background: rgb(0, 0, 0);
   box-shadow:
     0 0 12px rgba(255, 255, 255, 0.18),
@@ -262,7 +262,7 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  background: rgba(255,255,255,0.03);
+  background: linear-gradient(120deg, var(--primary-color) 0%, black 70%, var(--accent-color) 100%);
   font-size: 0.9rem;
   color: white;
 }
@@ -307,7 +307,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 20;
     min-height: var(--header-height);
@@ -340,6 +340,18 @@ h1 {
     border-right: 2px solid #27dddf;
   }
 
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* height: calc(100vh - var(--header-height)); */
+  }
+
+  .main-skills .skill-item {
+    max-width: 200px;
+
+  }
   /* EXTERNAL LINKS */
   
   .external-links {
@@ -370,6 +382,11 @@ h1 {
 @media (min-width: 1025px) {
   body {
     font-size: 18px;
+  }
+
+  .hero-container {
+    justify-content: center;
+    height: calc(100vh - var(--header-height));
   }
 }
 

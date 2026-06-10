@@ -15,8 +15,10 @@ export default function Home() {
           <GradienteBG />
           <NavBar />
           <HorizontalBar />
-          <Hero />
-          <MainSkills />
+          <div className="hero-container">
+            <Hero />
+            <MainSkills />
+          </div>
           <Work />
           <Footer />
         </div>
